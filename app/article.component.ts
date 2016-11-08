@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
     selector: 'article',
-    template: '<h1>Hello Angular2!</h1>'
+    template: '<h1>Hello Angular3!</h1>'
 })
 
 /*export class Article {

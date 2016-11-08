@@ -13,6 +13,8 @@ var platform_browser_1 = require('@angular/platform-browser');
 var forms_1 = require('@angular/forms');
 var router_1 = require('@angular/router');
 var http_1 = require('@angular/http');
+var material_1 = require('@angular/material');
+var app_component_1 = require("./app.component");
 var blog_component_1 = require("./blog.component");
 var article_component_1 = require("./article.component");
 var blog_service_1 = require('./blog.service');
@@ -25,7 +27,17 @@ var AppModule = (function () {
                 platform_browser_1.BrowserModule,
                 forms_1.FormsModule,
                 http_1.HttpModule,
+                material_1.MaterialModule.forRoot(),
                 router_1.RouterModule.forRoot([
+                    {
+                        path: '',
+                        redirectTo: '/blog',
+                        pathMatch: 'full'
+                    },
+                    {
+                        path: 'blog',
+                        component: blog_component_1.BlogComponent
+                    },
                     {
                         path: 'article',
                         component: article_component_1.ArticleComponent
@@ -33,13 +45,14 @@ var AppModule = (function () {
                 ])
             ],
             declarations: [
+                app_component_1.AppComponent,
                 blog_component_1.BlogComponent,
                 article_component_1.ArticleComponent
             ],
             providers: [
                 blog_service_1.BlogService
             ],
-            bootstrap: [blog_component_1.BlogComponent]
+            bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])
     ], AppModule);

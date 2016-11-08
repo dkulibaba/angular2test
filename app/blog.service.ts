@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { Headers, Http } from "@angular/http";
+import { Http, Response} from "@angular/http";
+import { Observable } from 'rxjs';
 
-import 'rxjs/add/operator/toPromise';
+import 'rxjs/add/operator/map';
 
 import { ArticleComponent } from './article.component';
 
@@ -9,18 +10,11 @@ import { ArticleComponent } from './article.component';
 export class BlogService {
     private blogUrl = 'http://jsonplaceholder.typicode.com/posts';
 
-
     constructor(private http: Http) { }
 
-    getAllArticles(): ArticleComponent[] {
-        return this.http.get(this.blogUrl)
-            .toPromise()
-            .then(response => response.json().data as ArticleComponent[])
-            .catch(this.handleError);
-    }
-
-    private handleError(error: any): Promise<any> {
-        console.error('Error loading articles', error);
-        return Promise.reject(error.message || error);
+    getAllArticles(): Observable<ArticleComponent[]> {
+        return this.http
+            .get(this.blogUrl)
+            .map((r: Response) => r.json().data as ArticleComponent[]);
     }
 }
