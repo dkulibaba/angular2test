@@ -1,36 +1,26 @@
 <html>
 <head>
-	<title>Angular 2 example</title>
+	<title>Angular2 examplr</title>
+	<base href="/">
+
+	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+
 	<link rel="stylesheet" href="styles.css">
 
 	<!-- 1. Load libraries -->
-	<!-- IE required polyfill -->
+	<!-- Polyfill for older browsers -->
 	<script src="node_modules/core-js/client/shim.min.js"></script>
-
 	<script src="node_modules/zone.js/dist/zone.js"></script>
 	<script src="node_modules/reflect-metadata/Reflect.js"></script>
-
-	<script src="node_modules/rxjs/bundles/Rx.js"></script>
-	<script src="node_modules/@angular/core/bundles/core.umd.js"></script>
-	<script src="node_modules/@angular/common/bundles/common.umd.js"></script>
-	<script src="node_modules/@angular/compiler/bundles/compiler.umd.js"></script>
-	<script src="node_modules/@angular/forms/bundles/forms.umd.js"></script>
-	<script src="node_modules/@angular/http/bundles/http.umd.js"></script>
-	<script src="node_modules/@angular/platform-browser/bundles/platform-browser.umd.js"></script>
-	<script src="node_modules/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.js"></script>
-	<script src="node_modules/@angular/material/material.umd.js"></script>
-
-	<!-- 2. Load our 'modules' -->
-	<script src='app/components/blog/app.blog.js'></script>
-	<script src='app/app.module.js'></script>
-	<script src='app/main.js'></script>
-
+	<script src="node_modules/systemjs/dist/system.src.js"></script>
+	<!-- 2. Configure SystemJS -->
+	<script src="systemjs.config.js"></script>
+	<script>
+		System.import('app').catch(function(err){ console.error(err); });
+	</script>
 </head>
-
-<!-- 3. Display the application -->
 <body>
-<my-app>Loading...</my-app>
+	<blog>Loading...</blog>
 </body>
-
 </html>
