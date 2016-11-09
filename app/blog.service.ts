@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Http, Response} from "@angular/http";
-import { Observable } from 'rxjs';
+import {Headers, Http, Response} from "@angular/http";
 
-import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/toPromise';
 
 import { ArticleComponent } from './article.component';
 
@@ -12,9 +11,32 @@ export class BlogService {
 
     constructor(private http: Http) { }
 
-    getAllArticles(): Observable<ArticleComponent[]> {
+    getAllArticles(): Promise<ArticleComponent[]> {
         return this.http
             .get(this.blogUrl)
-            .map((r: Response) => r.json().data as ArticleComponent[]);
+            .toPromise()
+            .then(response => response.json() as ArticleComponent[])
+            .catch(this.handleError);
+    }
+
+    getById(id: number): Promise<ArticleComponent> {
+        return this.http
+            .get(`${this.blogUrl}/${id}`)
+            .toPromise()
+            .then(response => response.json() as ArticleComponent)
+            .catch(this.handleError);
+    }
+
+    update(id: number, title: string): Promise<Response> {
+        const url = `${this.blogUrl}/${id}`;
+        return this.http
+            .put(url, JSON.stringify({title}), {headers: new Headers({'Content-Type': 'application/json'})})
+            .toPromise()
+            .catch(this.handleError);
+    }
+
+    private handleError(error: any): Promise<any> {
+        console.error('Error loading data', error);
+        return Promise.reject(error.message || error);
     }
 }

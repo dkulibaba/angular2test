@@ -25,9 +25,9 @@ var AppModule = (function () {
         core_1.NgModule({
             imports: [
                 platform_browser_1.BrowserModule,
+                material_1.MaterialModule.forRoot(),
                 forms_1.FormsModule,
                 http_1.HttpModule,
-                material_1.MaterialModule.forRoot(),
                 router_1.RouterModule.forRoot([
                     {
                         path: '',
@@ -39,7 +39,7 @@ var AppModule = (function () {
                         component: blog_component_1.BlogComponent
                     },
                     {
-                        path: 'article',
+                        path: 'article/:id',
                         component: article_component_1.ArticleComponent
                     }
                 ])

@@ -14,9 +14,9 @@ import { BlogService } from './blog.service';
 @NgModule({
     imports: [
         BrowserModule,
+        MaterialModule.forRoot(),
         FormsModule,
         HttpModule,
-        MaterialModule.forRoot(),
         RouterModule.forRoot(<Routes>[
             {
                 path: '',
@@ -28,7 +28,7 @@ import { BlogService } from './blog.service';
                 component: BlogComponent
             },
             {
-                path: 'article',
+                path: 'article/:id',
                 component: ArticleComponent
             }
         ])
