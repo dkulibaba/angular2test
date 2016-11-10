@@ -14,10 +14,10 @@ var forms_1 = require('@angular/forms');
 var router_1 = require('@angular/router');
 var http_1 = require('@angular/http');
 var material_1 = require('@angular/material');
-var app_component_1 = require("./app.component");
-var blog_component_1 = require("./blog.component");
-var article_component_1 = require("./article.component");
-var blog_service_1 = require('./blog.service');
+var app_component_1 = require("./component/app.component");
+var blog_1 = require("./component/blog/blog");
+var article_component_1 = require("./component/blog/article/article.component");
+var blog_service_1 = require('./service/blog.service');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -36,7 +36,7 @@ var AppModule = (function () {
                     },
                     {
                         path: 'blog',
-                        component: blog_component_1.BlogComponent
+                        component: blog_1.BlogComponent
                     },
                     {
                         path: 'article/:id',
@@ -46,7 +46,7 @@ var AppModule = (function () {
             ],
             declarations: [
                 app_component_1.AppComponent,
-                blog_component_1.BlogComponent,
+                blog_1.BlogComponent,
                 article_component_1.ArticleComponent
             ],
             providers: [

@@ -5,11 +5,11 @@ import { RouterModule, Routes }   from '@angular/router';
 import { HttpModule }    from '@angular/http';
 import { MaterialModule }    from '@angular/material';
 
-import { AppComponent } from "./app.component";
-import { BlogComponent } from "./blog.component";
-import { ArticleComponent } from "./article.component";
+import { AppComponent } from "./component/app.component";
+import { BlogComponent } from "./component/blog/blog";
+import { ArticleComponent } from "./component/blog/article/article.component";
 
-import { BlogService } from './blog.service';
+import { BlogService } from './service/blog.service';
 
 @NgModule({
     imports: [

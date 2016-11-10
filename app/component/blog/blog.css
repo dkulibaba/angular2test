@@ -1,0 +1,27 @@
+md-list.blog {
+    width: 1024px;
+    margin: 0 auto;
+    background-color: #ddd;
+    color: #777;
+}
+
+md-list.blog md-list-item .md-list-item {
+    height: auto;
+    flex-direction: column;
+    margin: 10px 0 10px;
+}
+
+md-list.blog md-list-item.blog__item:nth-child(2n+1) {
+    background-color: #eee;
+}
+
+.blog .blog__item header {
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.blog .blog__item article {
+    width: 100%;
+    text-indent: 30px;
+    padding-left: 20px;
+}
