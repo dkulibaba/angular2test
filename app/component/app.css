@@ -11,4 +11,7 @@
 .centered-container {
     width: 1024px;
     margin: 100px auto 0;
+    background-color: #eee;
+    color: #777;
+    padding: 20px;
 }

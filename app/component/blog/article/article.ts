@@ -18,7 +18,7 @@ export class ArticleComponent implements OnInit {
     body: string;
 
     constructor(private blogService: BlogService,
-                private route: ActivatedRoute) { }
+                private route: ActivatedRoute) {}
 
     ngOnInit(): void {
         this.route.params.forEach((params: Params) => {
@@ -37,7 +37,7 @@ export class ArticleComponent implements OnInit {
     }
 
     onSave(): void {
-        this.blogService.update(this.id, this.title).then(function() {
+        this.blogService.update(this.id, this.title, this.body).then(function() {
             this.editMode = false;
         }.bind(this));
     }

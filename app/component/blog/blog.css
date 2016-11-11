@@ -1,13 +1,8 @@
-md-list.blog {
-    background-color: #fff;
-    color: #777;
-}
-
 md-list.blog md-list-item .md-list-item {
     height: auto;
     flex-direction: column;
     margin: 10px 0 10px;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #aaa;
     padding-bottom: 5px;
 }
 

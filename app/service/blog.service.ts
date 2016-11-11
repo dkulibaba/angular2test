@@ -27,10 +27,10 @@ export class BlogService {
             .catch(this.handleError);
     }
 
-    update(id: number, title: string): Promise<Response> {
+    update(id: number, title: string, body: string): Promise<Response> {
         const url = `${this.blogUrl}/${id}`;
         return this.http
-            .put(url, JSON.stringify({title}), {headers: new Headers({'Content-Type': 'application/json'})})
+            .put(url, JSON.stringify({title, body}), {headers: new Headers({'Content-Type': 'application/json'})})
             .toPromise()
             .catch(this.handleError);
     }
