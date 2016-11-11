@@ -2,7 +2,7 @@ import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 
 import { BlogService } from '../../service/blog.service';
 
-import { ArticleComponent } from './article/article.component';
+import { ArticleComponent } from './article/article';
 
 @Component({
     selector: 'blog',

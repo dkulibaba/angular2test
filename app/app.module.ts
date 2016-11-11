@@ -5,9 +5,9 @@ import { RouterModule, Routes }   from '@angular/router';
 import { HttpModule }    from '@angular/http';
 import { MaterialModule }    from '@angular/material';
 
-import { AppComponent } from "./component/app.component";
+import { AppComponent } from "./component/app";
 import { BlogComponent } from "./component/blog/blog";
-import { ArticleComponent } from "./component/blog/article/article.component";
+import { ArticleComponent } from "./component/blog/article/article";
 
 import { BlogService } from './service/blog.service';
 

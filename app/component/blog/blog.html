@@ -1,7 +1,7 @@
 <md-list class="blog">
     <md-list-item class="blog__item" *ngFor="let article of articles">
         <header>
-            <a routerLink="/article/{{ article.id }}">{{article.title}}</a>
+            <a routerLink="/article/{{article.id}}">{{article.title}}</a>
         </header>
         <article>{{article.body}}</article>
     </md-list-item>

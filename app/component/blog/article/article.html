@@ -1,0 +1,18 @@
+<header>
+    <h3 *ngIf="!editMode">{{title}}</h3>
+    <div *ngIf="editMode">
+        <md-input class="blog-article__title blog-article--editable" placeholder="Article title" [(ngModel)]="title"></md-input>
+    </div>
+</header>
+
+<article class="blog-article">
+    <div *ngIf="!editMode">{{body}}</div>
+    <textarea class="blog-article__body blog-article--editable" *ngIf="editMode" [(ngModel)]="body">{{body}}</textarea>
+</article>
+
+<md-button-toggle-group (change)="onModeChange($event)">
+    <md-button-toggle value="view" checked>View Mode</md-button-toggle>
+    <md-button-toggle value="edit">Edit Mode</md-button-toggle>
+</md-button-toggle-group>
+
+<button md-raised-button color="primary" *ngIf="editMode" (click)="onSave($event)">Save</button>

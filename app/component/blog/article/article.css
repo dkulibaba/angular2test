@@ -1,0 +1,13 @@
+.blog-article {
+    border-top: 1px solid #777;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.blog-article--editable {
+    width: 100%;
+}
+
+.blog-article__body {
+    height: 200px;
+}

@@ -3,7 +3,7 @@ import {Headers, Http, Response} from "@angular/http";
 
 import 'rxjs/add/operator/toPromise';
 
-import { ArticleComponent } from '../component/blog/article/article.component';
+import { ArticleComponent } from '../component/blog/article/article';
 
 @Injectable()
 export class BlogService {
