@@ -7,6 +7,9 @@ To run this application you should have Node **4.x.x** or higher and NPM **3.x.x
 - Clone this repository to your local folder:
 `git clone https://github.com/dkulibaba/angular2test.git`
 
+- Go to newly created folder:
+`cd angular2test`
+
 - Install NPM packages:
 `
 npm install
